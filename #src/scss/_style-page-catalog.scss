@@ -1,0 +1,42 @@
+.catalog-all {
+    padding: 5% 0;
+    &__row {
+    }
+
+    &__title {
+        margin-bottom: 50px;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -30px -15px;
+    }
+
+    &__wrap {
+        padding: 30px 15px;
+    }
+
+    & .category-card {
+        flex: 0 1 calc(100% / 2);
+        .category-card__image {
+            height: 110px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .catalog-all {
+        &__title {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .catalog-all {
+        & .category-card {
+            flex: 0 1 calc(100% / 1);
+        }
+    }
+}

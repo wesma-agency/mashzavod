@@ -1,0 +1,159 @@
+// Style the dropdown
+.nice-select {
+  padding: 15px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: #fff;
+  box-sizing: border-box;
+  clear: both;
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 18px;
+  outline: none;
+  position: relative;
+  text-align: left !important;
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+  white-space: nowrap;
+  width: auto;
+  &:hover {
+    border-color: darken(#ffca1a, 5%);
+  }
+  &:active,
+  &:focus {
+    border-color: #ffca1a;
+  }
+  // Arrow
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translate(0, -50%);
+    width: 13px;
+    height: 7px;
+    background: url("../img/icon-form-arrow.svg") no-repeat;
+    transition: all 0.3s ease;
+  }
+
+  &.open {
+    @extend :active;
+    &:after {
+      transform: rotate(-180deg);
+    }
+    .list {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1) translateY(0);
+    }
+  }
+  &.disabled {
+    border-color: lighten(#ffca1a, 2%);
+    color: #ffca1a;
+    pointer-events: none;
+    &:after {
+      border-color: lighten(#ffca1a, 20%);
+    }
+  }
+
+  // Modifiers
+  &.wide {
+    width: 100%;
+    .list {
+      left: 0 !important;
+      right: 0 !important;
+    }
+  }
+  &.right {
+    float: right;
+    .list {
+      left: auto;
+      right: 0;
+    }
+  }
+  &.small {
+    font-family: "Roboto";
+    padding: 7px 13px 7px 18px;
+    width: 149px;
+    font-size: 12px;
+    line-height: 14px;
+    &:after {
+      top: 30%;
+      height: 13px;
+      width: 7px;
+      background: url("../img/page-product/product-icon-arrow.svg") no-repeat;
+      transform: rotate(90deg);
+    }
+    & .option {
+      padding: 7px 13px 7px 18px;
+    }
+    &.open {
+      &:after {
+        transform: rotate(-90deg);
+      }
+    }
+    & .list {
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  // List and options
+  .list {
+    background-color: #fff;
+    box-sizing: border-box;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transform-origin: 50% 0;
+    transform: scale(0.75) translateY(-30 / 2);
+    transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+    z-index: 110;
+    &:hover .option:not(:hover) {
+      background-color: transparent !important;
+    }
+  }
+  .option {
+    padding: 15px;
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 18px;
+    list-style: none;
+    outline: none;
+    text-align: left;
+    transition: all 0.2s;
+    &:hover,
+    &.focus,
+    &.selected.focus {
+      background-color: #ffca1a;
+    }
+    &.selected {
+      font-weight: bold;
+    }
+    &.disabled {
+      display: none;
+      background-color: transparent;
+      color: #ffca1a;
+      cursor: default;
+    }
+  }
+}
+
+// Use display instead of opacity for IE <= 10
+.no-csspointerevents .nice-select {
+  .list {
+    display: none;
+  }
+  &.open {
+    .list {
+      display: block;
+    }
+  }
+}

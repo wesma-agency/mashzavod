@@ -1,0 +1,256 @@
+.slick-slider {
+}
+
+.slick-slider.slick-initialized {
+}
+
+.slick-slider.slick-dotted {
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+.blog__slider .slick-list {
+  display: flex;
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+.promo__image .slick-list {
+  height: 100%;
+}
+
+/* Лента слайдов */
+.slick-track {
+  display: flex;
+}
+
+.partners__slider .slick-track {
+  align-items: center;
+}
+
+.promo__image .slick-track {
+  height: 100%;
+}
+
+.slick-slide {
+}
+
+.slick-slide.slick-active {
+}
+
+.slick-slide.slick-current {
+}
+
+.slick-slide.slick-center {
+}
+
+.slick-slide.slick-cloned {
+}
+
+.partners__slider .slick-arrow,
+.watch__slider .slick-arrow,
+.content__slider-big .slick-arrow,
+.similar__slider .slick-arrow {
+  font-size: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(238, 181, 26, 0.5);
+  background: none;
+  transition: all 0.3s ease;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 7px;
+    top: 11px;
+    left: 7px;
+    background: url("../img/icon-form-arrow.svg") no-repeat;
+    transform: rotate(90deg);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 1px;
+    background-color: #eeb51a;
+  }
+  &:hover {
+    background-color: #f9a21c;
+  }
+}
+
+.advantages__row .slick-arrow {
+  font-size: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 28px;
+  height: 28px;
+  background: #4d4d4d;
+  z-index: 10;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    width: 7px;
+    height: 13px;
+    background: url("../img/work-icon-arrow.svg") no-repeat;
+  }
+}
+
+.advantages__row .slick-arrow.slick-prev {
+  left: 15px;
+  &::before {
+    transform: rotate(180deg);
+  }
+}
+
+.advantages__row .slick-arrow.slick-next {
+  right: 15px;
+}
+
+.blog__trigger .slick-arrow {
+  position: relative;
+  font-size: 0;
+  width: 30px;
+  height: 30px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 13px;
+    height: 13px;
+    width: 7px;
+    background: url("../img/work-icon-arrow.svg") no-repeat;
+  }
+}
+
+.promo__arrow .slick-arrow,
+.promo__image .slick-arrow {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  bottom: 0;
+  background-color: #77767e;
+  font-size: 0;
+  transition: all 0.3s ease;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 23px;
+    background: url("../img/page-product/slider-arrow.svg") no-repeat;
+  }
+  &:hover {
+    background-color: #f9a21c;
+  }
+}
+/* Стрелка влево */
+.partners__slider .slick-arrow.slick-prev,
+.watch__slider .slick-arrow.slick-prev,
+.similar__slider .slick-arrow.slick-prev {
+  left: -40px;
+  &::after {
+    right: 28px;
+  }
+}
+
+.content__slider-big .slick-arrow.slick-prev {
+  left: -50px;
+  &::after {
+    content: none;
+  }
+}
+
+.blog__trigger .slick-arrow.slick-prev {
+  background-color: #8b8b8b;
+  &::before {
+    transform: rotate(180deg);
+  }
+}
+/* Стрелка вправо */
+.partners__slider .slick-arrow.slick-next,
+.watch__slider .slick-arrow.slick-next,
+.similar__slider .slick-arrow.slick-next {
+  right: -40px;
+  &::before {
+    transform: rotate(-90deg);
+  }
+  &::after {
+    left: 28px;
+  }
+}
+
+.content__slider-big .slick-arrow.slick-next {
+  right: -50px;
+  &::before {
+    transform: rotate(-90deg);
+  }
+  &::after {
+    content: none;
+  }
+}
+
+.blog__trigger .slick-arrow.slick-next {
+  background-color: #4d4d4d;
+}
+.promo__arrow .slick-arrow.slick-next,
+.promo__image .slick-arrow.slick-next {
+  left: 50px;
+  background-color: #4d4d4d;
+  &::before {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+  &:hover {
+    background-color: #f9a21c;
+  }
+}
+
+.slick-arrow.slick-disabled {
+}
+/* Точки (булиты) */
+
+.reviews__slider .slick-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 43px;
+}
+.reviews__slider .slick-dots li {
+  position: relative;
+  width: 40px;
+  height: 10px;
+  border-bottom: 1px solid #eeb51a;
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #eeb51a;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+/* Активная точка */
+.slick-dots li.slick-active {
+  &::before {
+    content: "";
+  }
+}
+/* Элемент точки */
+.reviews__slider .slick-dots li button {
+  font-size: 0;
+}

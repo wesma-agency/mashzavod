@@ -1,0 +1,116 @@
+.footer {
+    &__row-1 {
+        padding: 100px 0 90px 0;
+        background: #efefef;
+    }
+
+    &__row-2 {
+        padding: 40px 0 55px 0;
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__column {
+        margin-right: 7%;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__logo {
+        min-height: 50px;
+        margin-bottom: 35px;
+        & img {
+            padding-top: 2px;
+        }
+    }
+
+    &__text {
+        margin-bottom: 16px;
+        &_icon {
+            position: relative;
+            padding-left: 40px;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                transform: translate(0, -50%);
+                left: 0;
+            }
+        }
+        &_icon-addres {
+            &::before {
+                width: 19px;
+                height: 26px;
+                background: url("../img/footer-icon-addres.svg") no-repeat;
+            }
+        }
+        &_icon-phone {
+            &::before {
+                width: 21px;
+                height: 21px;
+                background: url("../img/footer-icon-phone.svg") no-repeat;
+            }
+        }
+        &_icon-email {
+            &::before {
+                width: 29px;
+                height: 19px;
+                background: url("../img/footer-iacon-email.svg") no-repeat;
+            }
+        }
+    }
+
+    &__social {
+        margin-top: 46px;
+        @extend .header__social;
+    }
+
+    &__name {
+        min-height: 50px;
+        max-width: 250px;
+        margin-bottom: 35px;
+        font-family: "Play";
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    &__text-2 {
+        font-family: "Roboto";
+        font-size: 14px;
+        line-height: 16px;
+        & a {
+            display: block;
+            margin-top: 5px;
+            color: #000000;
+            & span {
+                border-bottom: 1px solid #000;
+            }
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__develops {
+        display: flex;
+        align-items: center;
+    }
+
+    &__text-dev {
+        font-family: "Roboto";
+        color: #77767e;
+        margin-right: 20px;
+    }
+
+    &__dev-logo {
+        & img {
+            max-height: 40px;
+            object-fit: contain;
+        }
+    }
+}
